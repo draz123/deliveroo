@@ -19,8 +19,8 @@
 - JUnit/Spock - testing,
 - Gradle - build automation system
 
-
-To build project, please use(alternatively gradle wrapper can be used - ```gradle wrapper```):
+Repository contains **cron-experssion-parser.jar** program in **build/libs** folder.
+It can be used or recreated using command:
 ```
 gradle build
 ```
@@ -30,7 +30,7 @@ To execute tests:
 gradle test
 ```
 
-Example program run:
+Example program run(from the repository level):
 ```
 java -jar build/libs/cron-experssion-parser.jar "*/15 0 1 * 1-5 /usr/bin/find" 
 ```
