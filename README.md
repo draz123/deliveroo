@@ -25,11 +25,6 @@ It can be used or recreated using command:
 gradle build
 ```
 
-To execute tests:
-```
-gradle test
-```
-
 Example program run(from the repository level):
 ```
 java -jar build/libs/cron-experssion-parser.jar "*/15 0 1 * 1-5 /usr/bin/find" 
@@ -47,6 +42,12 @@ command       /usr/bin/find
 ```
 
 ## Tests:
+To execute tests, please use:
+```
+gradle test
+```
+Or run them from the IDE. 
+
 Tests are stored in two locations:
 - **deliveroo/src/test/groovy** - higher level tests covering all logic used for parsing
 - **deliveroo/src/test/java** - lower level tests covering rule engine
