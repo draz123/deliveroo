@@ -14,11 +14,12 @@
 - Program name can contain any ASCI char.
 - The input will be on a single line.
 
-## Key points:
+## Tech stack:
 - Java
 - JUnit/Spock - testing,
 - Gradle - build automation system
 
+## Run:
 Repository contains **cron-experssion-parser.jar** program in **build/libs** folder.
 It can be used or recreated using command:
 ```
@@ -30,7 +31,7 @@ Example program run(from the repository level):
 java -jar build/libs/cron-experssion-parser.jar "*/15 0 1 * 1-5 /usr/bin/find" 
 ```
 
-After execution of above command, output should be as the follows:
+Example output:
 ```
 minute        0 15 30 45
 hour          0
