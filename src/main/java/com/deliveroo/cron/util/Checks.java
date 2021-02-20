@@ -1,4 +1,4 @@
-package com.deliveroo.cron;
+package com.deliveroo.cron.util;
 
 public final class Checks {
 
@@ -8,6 +8,6 @@ public final class Checks {
     }
 
     private Checks() {
-        throw new AssertionError("No com.deliveroo.cron.Checks instances for you!");
+        throw new AssertionError("No com.deliveroo.cron.util.Checks instances for you!");
     }
 }

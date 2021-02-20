@@ -1,9 +1,9 @@
-package com.deliveroo.cron;
+package com.deliveroo.cron.model;
 
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 
-enum TimeUnit {
+public enum TimeUnit {
     MINUTE(0, 59, Pattern.compile("\\*|(\\*)?(/)?([0-5]?\\d)|(([0-5]?\\d)-([0-5]?\\d))|(([0-5]?\\d),)*([0-5]?\\d)").asMatchPredicate(), 0),
     HOUR(0, 23, Pattern.compile("\\*|(\\*/)?([0-9]|[1]?\\d|2[0-3])|([0-9]|[1]?\\d|2[0-3])-([0-9]|[1]?\\d|2[0-3])|(([0-9]|[1]?\\d|2[0-3]),)*([0-9]|[1]?\\d|2[0-3])").asMatchPredicate(), 1),
     DAY_OF_MONTH(1, 31, Pattern.compile("\\*|(\\*/)?(0?[1-9]|[12]\\d|3[01])|(0?[1-9]|[12]\\d|3[01])-(0?[1-9]|[12]\\d|3[01])|((0?[1-9]|[12]\\d|3[01]),)*(0?[1-9]|[12]\\d|3[01])").asMatchPredicate(), 2),
