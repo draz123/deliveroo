@@ -3,10 +3,11 @@ package com.deliveroo.cron;
 import com.deliveroo.cron.model.TimeUnit;
 import com.deliveroo.cron.param.RuleEngine;
 
+import java.util.Arrays;
 import java.util.List;
 
-import static com.deliveroo.cron.util.Checks.checkThat;
 import static com.deliveroo.cron.model.TimeUnit.*;
+import static com.deliveroo.cron.util.Checks.checkThat;
 
 public class CronParser {
 
@@ -29,18 +30,16 @@ public class CronParser {
         final var input = args[0];
         final var parameters = input.split("\\s+");
         checkThat(parameters.length == 6, "Input parameter doesn't have correct number of parameters.");
+        Arrays.stream(TimeUnit.values()).forEach(timeUnit -> checkThat(timeUnit.pattern.test(parameters[timeUnit.inputIndex]), String.format("[%s] param in wrong format", timeUnit.name())));
         return parameters;
     }
 
     private static String commandParam(String[] parameters) {
-        final var command = parameters[COMMAND_PARAM_INDEX];
-        checkThat(!command.isBlank() && !command.isEmpty(), "Command parameter is incorrect");
-        return command;
+        return parameters[COMMAND_PARAM_INDEX];
     }
 
     private static List<Integer> timeUnitParam(String[] parameters, TimeUnit timeUnit) {
         final var parameter = parameters[timeUnit.inputIndex];
-        checkThat(timeUnit.pattern.test(parameter), String.format("[%s] param in wrong format", timeUnit.name()));
         return RULE_ENGINE.process(parameter, timeUnit);
     }
 }
