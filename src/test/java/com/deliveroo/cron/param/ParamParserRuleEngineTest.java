@@ -1,7 +1,6 @@
 package com.deliveroo.cron.param;
 
 import com.deliveroo.cron.model.TimeUnit;
-import com.deliveroo.cron.param.RuleEngine;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -9,9 +8,9 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class RuleEngineTest {
+class ParamParserRuleEngineTest {
 
-    private final RuleEngine ruleEngine = new RuleEngine();
+    private final ParamParserRuleEngine paramParserRuleEngine = new ParamParserRuleEngine();
 
     @Test
     void should_proces_comma_input() {
@@ -20,7 +19,7 @@ class RuleEngineTest {
         var timeUnit = TimeUnit.MINUTE;
 
         // when
-        var result = ruleEngine.process(input, timeUnit);
+        var result = paramParserRuleEngine.process(input, timeUnit);
 
         //then
         assertEquals(List.of(3, 4), result);
@@ -33,6 +32,6 @@ class RuleEngineTest {
         var timeUnit = TimeUnit.MINUTE;
 
         // then
-        assertThrows(IllegalArgumentException.class, () -> ruleEngine.process(input, timeUnit));
+        assertThrows(IllegalArgumentException.class, () -> paramParserRuleEngine.process(input, timeUnit));
     }
 }

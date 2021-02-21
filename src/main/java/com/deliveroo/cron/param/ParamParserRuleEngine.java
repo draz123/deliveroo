@@ -4,7 +4,7 @@ import com.deliveroo.cron.model.TimeUnit;
 
 import java.util.List;
 
-public class RuleEngine {
+public class ParamParserRuleEngine {
 
     private static final List<Rule> RULES = List.of(new AsteriskRule(), new DashRule(), new CommaRule(), new SingleNumberRule());
 

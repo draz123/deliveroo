@@ -1,7 +1,7 @@
 package com.deliveroo.cron;
 
 import com.deliveroo.cron.model.TimeUnit;
-import com.deliveroo.cron.param.RuleEngine;
+import com.deliveroo.cron.param.ParamParserRuleEngine;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,8 +12,9 @@ import static com.deliveroo.cron.util.Checks.checkThat;
 public class CronParser {
 
     private static final int COMMAND_PARAM_INDEX = 5;
-    private static final RuleEngine RULE_ENGINE = new RuleEngine();
-    private static final ResultPrinter resultPrinter = new ResultPrinter();
+
+    private final ParamParserRuleEngine paramParserRuleEngine = new ParamParserRuleEngine();
+    private final ResultPrinter resultPrinter = new ResultPrinter();
 
     public void parse(String[] args) {
         final var parameters = validateInputArgument(args);
@@ -35,12 +36,12 @@ public class CronParser {
         return parameters;
     }
 
-    private static String commandParam(String[] parameters) {
+    private String commandParam(String[] parameters) {
         return parameters[COMMAND_PARAM_INDEX];
     }
 
-    private static List<Integer> timeUnitParam(String[] parameters, TimeUnit timeUnit) {
+    private List<Integer> timeUnitParam(String[] parameters, TimeUnit timeUnit) {
         final var parameter = parameters[timeUnit.inputIndex];
-        return RULE_ENGINE.process(parameter, timeUnit);
+        return paramParserRuleEngine.process(parameter, timeUnit);
     }
 }
