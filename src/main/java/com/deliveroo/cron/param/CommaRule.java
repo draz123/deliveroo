@@ -11,7 +11,7 @@ public class CommaRule implements Rule {
 
     @Override
     public boolean evaluate(String input) {
-        return Pattern.compile("-?\\d+(\\.\\d+)?,?\\d+(\\.\\d+)?(,?\\d+(\\.\\d+)?)?").asMatchPredicate().test(input);
+        return Pattern.compile("\\d+,\\d+(,\\d+)?").asMatchPredicate().test(input);
     }
 
     @Override

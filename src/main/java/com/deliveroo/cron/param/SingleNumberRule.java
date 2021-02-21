@@ -9,7 +9,7 @@ public class SingleNumberRule implements Rule {
 
     @Override
     public boolean evaluate(String input) {
-        return Pattern.compile("-?\\d+(\\.\\d+)?").asMatchPredicate().test(input);
+        return Pattern.compile("\\d+").asMatchPredicate().test(input);
     }
 
     @Override
