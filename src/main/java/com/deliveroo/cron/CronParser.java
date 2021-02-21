@@ -30,7 +30,8 @@ public class CronParser {
         final var input = args[0];
         final var parameters = input.split("\\s+");
         checkThat(parameters.length == 6, "Input parameter doesn't have correct number of parameters.");
-        Arrays.stream(TimeUnit.values()).forEach(timeUnit -> checkThat(timeUnit.pattern.test(parameters[timeUnit.inputIndex]), String.format("[%s] param in wrong format", timeUnit.name())));
+        Arrays.stream(TimeUnit.values())
+            .forEach(timeUnit -> checkThat(timeUnit.pattern.test(parameters[timeUnit.inputIndex]), String.format("[%s] param in wrong format", timeUnit.name())));
         return parameters;
     }
 
