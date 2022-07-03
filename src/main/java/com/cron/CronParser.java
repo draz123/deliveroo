@@ -1,13 +1,13 @@
-package com.deliveroo.cron;
+package com.cron;
 
-import com.deliveroo.cron.model.TimeUnit;
-import com.deliveroo.cron.param.ParamParserRuleEngine;
+import com.cron.model.TimeUnit;
+import com.cron.param.ParamParserRuleEngine;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static com.deliveroo.cron.model.TimeUnit.*;
-import static com.deliveroo.cron.util.Checks.checkThat;
+import static com.cron.model.TimeUnit.*;
+import static com.cron.util.Checks.checkThat;
 
 public class CronParser {
 

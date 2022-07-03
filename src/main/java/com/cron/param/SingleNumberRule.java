@@ -1,15 +1,17 @@
-package com.deliveroo.cron.param;
+package com.cron.param;
 
-import com.deliveroo.cron.model.TimeUnit;
+import com.cron.model.TimeUnit;
 
 import java.util.List;
 import java.util.regex.Pattern;
 
 public class SingleNumberRule implements Rule {
 
+    private final static String regex = "\\d+";
+
     @Override
     public boolean evaluate(String input) {
-        return Pattern.compile("\\d+").asMatchPredicate().test(input);
+        return Pattern.compile(regex).asMatchPredicate().test(input);
     }
 
     @Override

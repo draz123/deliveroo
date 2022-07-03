@@ -1,6 +1,6 @@
-package com.deliveroo.cron.param;
+package com.cron.param;
 
-import com.deliveroo.cron.model.TimeUnit;
+import com.cron.model.TimeUnit;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,7 +13,7 @@ class ParamParserRuleEngineTest {
     private final ParamParserRuleEngine paramParserRuleEngine = new ParamParserRuleEngine();
 
     @Test
-    void should_proces_comma_input() {
+    void should_process_comma_input() {
         // given
         var input = "3,4";
         var timeUnit = TimeUnit.MINUTE;

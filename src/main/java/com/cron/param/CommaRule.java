@@ -1,6 +1,6 @@
-package com.deliveroo.cron.param;
+package com.cron.param;
 
-import com.deliveroo.cron.model.TimeUnit;
+import com.cron.model.TimeUnit;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,9 +9,11 @@ import java.util.stream.Collectors;
 
 public class CommaRule implements Rule {
 
+    private final static String TEST_PATTERN = "\\d+,\\d+(,\\d+)?";
+
     @Override
     public boolean evaluate(String input) {
-        return Pattern.compile("\\d+,\\d+(,\\d+)?").asMatchPredicate().test(input);
+        return Pattern.compile(TEST_PATTERN).asMatchPredicate().test(input);
     }
 
     @Override

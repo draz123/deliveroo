@@ -1,6 +1,6 @@
-package com.deliveroo.cron;
+package com.cron;
 
-public class CronExpressionParserProgram {
+public class CronExpressionParserConsoleApp {
 
     public static void main(String[] args) {
         new CronParser().parse(args);

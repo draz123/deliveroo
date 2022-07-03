@@ -1,7 +1,6 @@
-package com.deliveroo.cron.param;
+package com.cron.param;
 
-import com.deliveroo.cron.model.TimeUnit;
-import com.deliveroo.cron.param.DashRule;
+import com.cron.model.TimeUnit;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -36,7 +35,7 @@ class DashRuleTest {
         var result = rule.getResult(input, TimeUnit.DAY_OF_MONTH);
 
         // then
-        Assertions.assertEquals(List.of(2, 3, 4), result);
+        assertEquals(List.of(2, 3, 4), result);
     }
 
     @Test

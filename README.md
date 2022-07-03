@@ -1,21 +1,20 @@
 # Cron Expression Parser
 
-## Requirements:
-- Write a command line application or script which parses a cron string and expands each field
-  to show the times at which it will run. 
+## Description:
+- Codebase represents command line application or script which parses a cron string and expands each field
+  to show the times at which it will run,
 - Standard cron format with five time fields (minute, hour, day of
-  month, month, and day of week) plus a command.
-- No need to handle the special time strings such as "@yearly". 
-- The output should be formatted as a table with the field name taking the first 14 columns and
-  the times as a space-separated list following it.
+  month, month, and day of week) plus a command,
+- Special time strings such as "@yearly" are not supported,
+- The output is formatted as a table with the field name taking the first 14 columns and
+  the times as a space-separated list following it,
 
 ## Assumptions:
-- Program doesn't cover month ends validation. All months have limit to 31 days.
-- Program name can contain any ASCI char.
-- The input will be on a single line.
+- Program name can contain any ASCI char,
+- The input is a single line text,
 
 ## Tech stack:
-- Java
+- Java 17
 - JUnit/Spock - testing,
 - Gradle - build automation system
 
@@ -50,8 +49,8 @@ gradle test
 Or run them from the IDE. 
 
 Tests are stored in two locations:
-- **deliveroo/src/test/groovy** - higher level tests covering all logic used for parsing
-- **deliveroo/src/test/java** - lower level tests covering rule engine
+- **cron/src/test/groovy** - higher level tests covering all logic used for parsing
+- **cron/src/test/java** - lower level tests covering rule engine
 
-**CronParserTest** contains tests covering all logic used for parsing, the rest of them are 
-responsible for particular steps used in flow.  
+**CronParserTest** is a functional test. It contains tests covering all logic used for parsing, the rest of test classes are 
+unit tests.  

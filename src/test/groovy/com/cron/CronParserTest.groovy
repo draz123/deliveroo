@@ -1,6 +1,6 @@
-package com.deliveroo.cron
+package com.cron
 
-import com.deliveroo.cron.CronParser
+
 import spock.lang.Specification
 
 class CronParserTest extends Specification {
@@ -30,8 +30,6 @@ class CronParserTest extends Specification {
     }
 
     def "should throw illegal argument exception when argument has wrong number of parameters"(String[] input) {
-        given:
-
         when:
         cronParser.parse(input)
 

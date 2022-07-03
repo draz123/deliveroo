@@ -1,4 +1,4 @@
-package com.deliveroo.cron
+package com.cron
 
 import spock.lang.Specification
 

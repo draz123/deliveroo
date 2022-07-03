@@ -1,4 +1,4 @@
-package com.deliveroo.cron;
+package com.cron;
 
 import java.util.Arrays;
 import java.util.List;

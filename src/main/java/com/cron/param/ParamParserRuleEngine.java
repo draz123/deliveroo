@@ -1,6 +1,6 @@
-package com.deliveroo.cron.param;
+package com.cron.param;
 
-import com.deliveroo.cron.model.TimeUnit;
+import com.cron.model.TimeUnit;
 
 import java.util.List;
 

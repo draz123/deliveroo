@@ -1,4 +1,4 @@
-package com.deliveroo.cron.model;
+package com.cron.model;
 
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
